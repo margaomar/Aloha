@@ -35,6 +35,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    scroll-behavior: smooth;
 }
 ol, ul {
     list-style: none;
@@ -51,17 +52,50 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/* ----- FIN RESET ----- */
 
-/* FIN RESET */
 
+body{
+    color: #2d2d2d;
+}
+::selection{
+    background: #e2574c;
+    color: #FFF;
+}
+::-moz-selection{
+    background: #e2574c;
+    color: #FFF;
+}
+*:focus{
+    outline: 0px;
+}
 header{
     width: 100%;
-    padding-top: 1em;
+    padding-top: 0.5em;
+    z-index: 10000;
+    position: sticky;
+    top: 0;
+    position: fixed;
+    left: 0;
+    transition: all 0.5s;
+    background-color: #FFF;
+    box-shadow: 1px 1px 1px #777777;
+}
+/* scroll hide header  */
+header.scrollUp {
+    transform: translateY(-120px);
+
 }
 .container{
     width: 96%;
     margin: 0 auto;
 }
+
+/* ------ Nav ------- */
+/* .fix-header{
+    position: sticky;
+    top: 0;
+} */
 .main-nav{
     display: flex;
     justify-content: space-between;
@@ -69,95 +103,120 @@ header{
 }
 .main-nav figure{
     width: 50%;
+    text-align: left;
 }
 .logo{
-    width: 140px;
-    margin-bottom: 20px;
-    /*padding-left: 1em;*/
-    /* text-align: center; */
+    width: 100px;
+    margin-bottom: 10px;
 }
 .cart{
     width: 48%;
     text-align: right;
 }
 .cart img{
-    width: 55px;   
+    width: 40px;  
 }
 .main-nav ul{
     order:2;
     display: inline-flex;
     margin: 0 auto;
     width: 100%;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #d7d7d7;
 }
 .main-nav ul li{
-    padding: 1em 1em;
+    padding: 4%;
     display: inline-block;
-    width: 25%;;
+    width: 25%;
 }
 .main-nav ul li a{
     text-decoration: none;
     color: #e2574c;
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
-    font-weight: 300;
+    font-family: 'Raleway';
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-style: normal;
     text-align: center;
     text-transform: uppercase;
 }
 .main-nav ul li a:hover{
-    color: rgb(202, 74, 67, 0.7);
-    transition: 0.3s;
+    color: #b64036;
+    transition: 0.4s;
 }
+
+/* ----- Main img - slider ----- */
+
 .header-collection{
+    position: relative;
+    margin-top: 100px;
     padding: 18% 10%;
     background: url(images/banner-girl.png), url(images/flower-bkgd.jpg);
-    /* background-position: center 66px, center top; */
-    background-position: center 163%, center top;
+    background-position-x: center, center;
+    background-position-y: 54px, center;
+    background-size: 40%, cover;
     background-repeat: no-repeat, no-repeat;
-    background-size: 37%, cover;
-    color: #f5f5f5;
+    color: #FFF;
+    z-index: 0;
+}
+.header-collection::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#111111,#999999);
+    opacity: .3;
+    z-index: -1;
 }
 .header-collection h1{
-    font-family: "PlayfairDisplay";
-    font-size: 40px;
+    font-family: 'Playfair Display';
+    font-size: 2.2rem;
     font-weight: normal;
     text-align: center;
-    text-shadow: 1px 1px 3px #111111;
+    text-shadow: 1px 1px 2px #777777;
     padding-bottom: 4rem;
 }
 .header-collection h2{
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-size: 18px;
     font-weight: 500;
+    font-style: normal;
     text-align: center;
     text-transform: uppercase; 
-    text-shadow: 1px 1px 3px #111111;  
+    text-shadow: 1px 1px 2px #777777;
     padding: 4rem 0 1rem 0;
 }
+
+/* ------ Claim box ------ */
+
 .claim{
-    /* padding: 4em 21em; */
-    color: black;
+    color: #000000;
     padding: 3rem 1rem;
 }
 .claim h2{
-    font-family: "PlayfairDisplay";
+    font-family: 'Playfair Display';
     font-size: 34px;
-    font-weight: 900;
+    font-weight: bold;
+    font-style: normal;
     text-align: center;
 }
 .claim-italic{
-    font-family: "PlayfairDisplay";
+    font-family: 'Playfair Display';
+    font-weight: normal;
     font-style: italic;
-    font-weight: 100;
 }
 .claim p{
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 100;
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
     text-align: center;
     margin-top: 20px;
     line-height: 30px;
 }
+
 /*-----Categories nav----*/
+
 .categories-nav{
     display: flex;
     flex-wrap: wrap;
@@ -168,8 +227,9 @@ header{
     height: 320px;
     display: block;
     text-decoration: none;
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-family: 'Raleway';
     font-weight: 500;
+    font-style: normal;
     font-size: 36px;
     text-transform: uppercase;
 }
@@ -178,7 +238,7 @@ header{
     text-shadow: 1px 1px 4px #666666;
 }
 .categories-nav a:hover {
-    background-color: rgb(202, 74, 67, 0.6);
+    background-color: rgb(182, 64, 54, 0.6);
     transition: 0.4s;
 }
 .name-cat-nav{
@@ -226,50 +286,76 @@ header{
 }
 
 /*-----Carrousel----*/
-.carrousel{
-    padding-bottom: 4em;
+
+.carousel-claim.claim{
+    padding: 7% 27% 5% 27%;
 }
-.carrousel ul {
-    display: flex;
-    flex-direction: column;
+.carrousel-nav{
+    padding-bottom: 5em;
 }
-.carrousel li{
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+.carrousel-nav figcaption{
+    line-height: 2.3;
 }
-.carrousel a{
-    text-decoration: none;
-}
-.carrousel li:hover, .carrousel li img:hover, .carrousel li figcaption:hover {
-    opacity: 0.7;
-    transition: 0.4s;
-}
-.carrousel h2{
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
+.carrousel-nav h2{
+    font-family: 'Raleway';
     font-size: 12px;
-    font-weight: 400;
-    color: #666666;
+    font-weight: 300;
+    font-style: normal;
+    color: #969696;
     text-transform: uppercase;
     text-align: center;
 }
-.carrousel h3{
-    font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
+.carrousel-nav h3{
+    font-family: 'Playfair Display';
     font-size: 16px;
-    font-weight: 400;
+    font-weight: normal;
+    font-style: normal;
     color: #e2574c;
     text-align: center;
 }
-.carrousel p{
-    font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
+.carrousel-nav p{
+    font-family: 'Playfair Display';
     font-size: 16px;
-    font-weight: 400;
-    color: #666666;
+    font-weight: normal;
+    font-style: normal;
+    color: #969696;
     text-align: center;
+} 
+.carrousel-nav p button{
+    background-color: #e2574c;
+    background-color: #111111;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    margin-bottom: 2rem;
 }
 
-/*---form----*/
+/* carrousel flipy */
+
+.carousel-cell {
+    width: 100%;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel.is-fullscreen .carousel-cell {
+    height: 100%;
+  }
+  .carousel-cell img {
+    display: block;
+    max-height: 100%;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .flickity-page-dots {
+    bottom: -40px;
+  }
+
+/* ----- Form ------ */
+
 .claim-form {
     color: #f5f5f5;
     text-shadow: 1px 1px 3px #111111;
@@ -280,59 +366,84 @@ header{
 form {
     margin-top: 50px;
 }
-form div.input {
-    background-color: #f5f5f5;
+form .background {
+    background-color: #ffffff;
     border-radius: 30px;
+    box-shadow: 1px 1px 1px #777777;
     width: 426px;
     width: 96%;
     margin: 0 auto;
 }
 .form input {
+    font-family: 'Raleway';
+    font-size: 17px;
+    font-weight: 300;
+    font-style: normal;
     border-radius: 5px;
-    background-color: #f5f5f5;
-    /* width: 282px; */
+    background-color: #ffffff;
     width: 50%;
     height: 46px;
     margin-left: 20px;
     font-size: 16px;
-    color: grey;
+    color: #969696;
+    padding: 0px;
+    border-width: 0px;
 }
 .form input:focus{
 	outline:0px;
 }
-
 .form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: lightgrey;
-  }
+    color: #d3d3d3;
+}
 .form input::-moz-placeholder { /* Firefox 19+ */
-    color: lightgrey;
+    color: #d3d3d3;
 }
 .form input:-ms-input-placeholder { /* IE 10+ */
-    color: lightgrey;
+    color: #d3d3d3;
 }
 .form input:-moz-placeholder { /* Firefox 18- */
-    color: lightgrey;
-  }
-form button {
+    color: #d3d3d3;
+}
+form input.button {
     background-color: #e2574c;
     height: 36px;
     border-radius: 20px;
     width: 110px;
-    color: #f5f5f5;
+    color: #ffffff;
     font-size: 16px;
     margin: 5px;
     cursor: pointer;
     float: right;
 }
-form button:hover{
-    background-color: rgb(202, 74, 67, 0.6);
+form input.button:hover{
+    background-color: #b64036;
     transition: 0.4s;
 }
-/*---footer----*/
+form input.button:focus {
+    outline: 0px;
+}
+.alert{
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 3px #111111;
+    background-color: #e2574c;
+    border-radius: 20px;
+}
+.hide{
+    display: none;
+}
+
+/* ------ Footer ------- */
 
 .footer{
-    background-color: #333333;
-    font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
+    background-color: #242424;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     color: #f5f5f5;
@@ -359,15 +470,17 @@ footer .container{
     content: "604-604-6040. info@alohaapparel.com";
 }
 .grey-medium{
-    color: #666666;
+    color: #969696;
 }
 .social li{
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
     margin-bottom: 6px;
     display: inline-block;
 }
 .social li a:hover, footer a:hover {
-    color: rgb(202, 74, 67, 0.9);
+    color: #b64036;
     transition: 0.3s;
 }
 .social li a::before{
@@ -375,7 +488,6 @@ footer .container{
     display: inline-block;
 }
 .facebook a::before{
-    /*content: "\E87C";*/
     content: "\f39e";
     font-family: "Font Awesome 5 Brands"; 
 }
@@ -399,32 +511,74 @@ footer .container{
     display: none;
 }
 
+/* ---- Back to top button ---- */
 
+#button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border: 1px solid #e2574c;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 38px;
+    color: #e2574c;
+  }
+  #button:hover::after {
+    color: #b64036;
+}
+  #button:hover {
+    cursor: pointer;
+    border: 1px solid #b64036;
+  }
+  #button:active {
+    background-color: #555;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
 
-@media screen and (min-width:600px){
-
-    .main-nav ul{
-        order:0;
-        display: inline-flex;
-        margin: 0 auto;
-        border-top: none;
+  
+@media screen and (min-width:425px){
+    .main-nav ul li{
+        padding: 0 4%;
     }
-    .main-nav {
-        flex-wrap: nowrap;
+    .main-nav ul li a {
+        font-size: 1rem;
+        line-height: 3rem;
     }
-    .carrousel ul {
-        flex-direction: row;
+    .header-collection {
+        background-size: 37%, cover;
+        background-repeat: no-repeat, no-repeat;
+    }
+    .header-collection h1 {
+        font-size: 2.4rem;
     }
 }
-@media screen and (min-width:1240px){
 
+@media screen and (min-width:600px){
     header{
-        width: 100%;
-        padding-top: 1em;
+        padding-top: 1rem;
     }
-    .container{
-        width: 96%;
-        margin: 0 auto;
+
+    /* ------ Nav ------- */
+    .main-nav figure {  
+        width: 40%;
     }
     .logo{
         width: 150px;
@@ -434,321 +588,155 @@ footer .container{
         width: 55px;    
     }
     .main-nav{
-        display: flex;
         flex-wrap: nowrap;
         text-align: center;
     }
-    .main-nav ul{
-        display: inline-flex;
-        margin: 0 auto;
+    .main-nav ul {
+        padding: 1rem 1rem;
         order: 0;
+        border-top: none;
+        width: auto;
     }
-    .main-nav ul li{
-        padding: 2em 1em;
-        display: inline-block;
-    }
-    .main-nav ul li a{
-        text-decoration: none;
-        color: #e2574c;
-        font-family: "Raleway", Arial, Helvetica, sans-serif;
-        font-weight: 300;
-        text-align: center;
-        text-transform: uppercase;
-    }
-    .main-nav ul li a:hover{
-        color: rgb(202, 74, 67, 0.7);
-        transition: 0.3s;
-    }
+
+    /* ----- Main img - slider ----- */
+
     .header-collection{
-        padding: 18% 0;
-        background: url(images/banner-girl.png), url(images/flower-bkgd.jpg);
-        background-position: center 66px, center top;
-        background-repeat: no-repeat, no-repeat;
-        background-size: 20%, cover;
-        color: #f5f5f5;
+        background-position-y: 73px, center;
+        background-size: 26%, cover;
+        margin-top: 95px;
     }
     .header-collection h1{
-        font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
-        font-size: 62px;
+        font-size: 3rem;
+    }
+    .header-collection h2{
+        font-size: 20px;
+    }
+
+    /* ------ Claim box ------ */
+
+    .claim{
+        padding: 3rem 5rem 4rem 5rem;
+    }
+    .claim h2{
+        font-size: 38px;
+    }
+    .claim p{
+        font-size: 16px;
+    }
+
+    /*-----Categories nav----*/
+
+    .men{
+        width: 50%;
+    }
+    .trends{
+        width: 25%;
+    }
+    .glasses{
+        width: 25%;
+    }
+    .sale{
+        width: 25%;
+    }
+    .bags{
+        width: 25%;
+    }
+    .womens{
+        width: 50%;
+    }
+
+    /*-----Carrousel----*/
+
+    .carousel-cell { 
+        width: 50%;
+    }
+
+    /*---Form----*/
+
+    .form input {
+        width: 282px;
+        height: 46px;
+    }
+
+    /*---Footer----*/
+
+    footer .container{
+        display: flex;
+        flex-direction: row;
+    }
+    .footer p{
+        margin-bottom: 1.4em;
+    }
+    .footer ul{
+        margin-right: 30px;
+    }
+    .social li{
+        display: block;
+    }
+    ul.social div {
+        display: inline-block;
+    }
+    footer .container{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        text-align: left;
+    }
+    .hide-mobile{
+        display: block;
+    }
+    /* back to top */
+    #button {
+        width: 50px;
+        height: 50px;
+      }
+      #button::after {
+        content: "\f077";
+        font-family: "FontAwesome";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 47px;
+        color: #e2574c;
+      }
+
+}
+
+@media screen and (min-width:1024px){
+    .main-nav ul li a {
+        font-size: 1.1rem;
+    }
+    .claim{
+        padding: 7% 27%;
+        color: black;
+    }
+    .header-collection{
+        padding: 16% 10%;
+        background-size: 24%, cover;
+    }
+    .header-collection h1{
+        font-family: 'Playfair Display';
+        font-size: 4rem;
         font-weight: normal;
         text-align: center;
         text-shadow: 1px 1px 3px #111111;
     }
     .header-collection h2{
-        font-family: "Raleway", Arial, Helvetica, sans-serif;
+        font-family: 'Raleway';
         font-size: 20px;
         font-weight: 500;
         text-align: center;
         text-transform: uppercase; 
         text-shadow: 1px 1px 3px #111111;  
     }
-    .claim{
-        padding: 4em 21em;
-        color: black;
-    }
-    .claim h2{
-        font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
-        font-size: 38px;
-        font-weight: 900;
-        text-align: center;
-    }
-    .claim-italic{
-        font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
-        font-style: italic;
-        font-weight: 100;
-    }
-    .claim p{
-        font-family: "Raleway", Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        font-weight: 100;
-        text-align: center;
-        margin-top: 20px;
-        line-height: 30px;
-    }
-    /*-----Categories nav----*/
-    .categories-nav{
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-        margin-left: -6px;
-    }
-    .categories-nav a{
-        height: 320px;
-        display: block;
-        text-decoration: none;
-        font-family: "Raleway", Arial, Helvetica, sans-serif;
-        font-weight: 500;
-        font-size: 36px;
-        text-transform: uppercase;
-    }
-    .categories-nav a {
-        color: #f5f5f5;
-        text-shadow: 1px 1px 4px #666666;
-    }
-    .categories-nav a:hover {
-        background-color: rgb(202, 74, 67, 0.6);
-        transition: 0.4s;
-    }
-    .name-cat-nav{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    .men, .trends, .glasses, .bags, .sale, .womens{
-        height: 320px;
-        position: relative;
-        border-left: 6px solid #fff;
-        margin-right: -6px;
-        border-bottom: 6px solid #fff;
-    }
-    .men{
-        width: 50%;
-        background: url(images/mens-category.jpg) no-repeat right bottom;
-        background-size: cover;
-    }
-    .trends{
+    .carousel-cell { 
         width: 25%;
-        background: url(images/trends-category.jpg) no-repeat right bottom;
-        background-size: cover;
     }
-    .glasses{
-        width: 25%;
-        background: url(images/glasses-category.jpg) no-repeat right bottom;
-        background-size: cover;
-    }
-    .sale{
-        width: 25%;
-        background: url(images/sale-category.jpg) no-repeat right bottom;
-        background-size: cover;
-    }
-    .bags{
-        width: 25%;
-        background: url(images/bags-category.jpg) no-repeat right bottom;
-        background-size: cover;
-    }
-    .womens{
-        width: 50%;
-        background: url(images/womens-category.jpg) no-repeat right bottom;
-        background-size: cover;
-    }
-
-    /*-----Carrousel----*/
-    .carrousel{
-        padding-bottom: 4em;
-    }
-    .carrousel li{
-        display: inline-block;
-        width: 24%;
-    }
-    .carrousel a{
-        text-decoration: none;
-    }
-    .carrousel li:hover, .carrousel li img:hover, .carrousel li figcaption:hover {
-        opacity: 0.7;
-        transition: 0.4s;
-    }
-    .carrousel h2{
-        font-family: "Raleway", Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 400;
-        color: #666666;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .carrousel h3{
-        font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
-        font-size: 16px;
-        font-weight: 400;
-        color: #e2574c;
-        text-align: center;
-    }
-    .carrousel p{
-        font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
-        font-size: 16px;
-        font-weight: 400;
-        color: #666666;
-        text-align: center;
-    }
-
-    /*---form----*/
-    .claim-form {
-        color: #f5f5f5;
-        text-shadow: 1px 1px 3px #111111;
-    }
-    .form {
-        background: url(images/wave-bkgd.jpg) no-repeat bottom;
-    }
-    form {
-        margin-top: 50px;
-    }
-    .form input {
-        border-radius: 5px;
-        background-color: #f5f5f5;
-        width: 282px;
-        height: 46px;
-        margin-left: 20px;
-        font-size: 16px;
-        color: grey;
-    }
-    .form input:focus{
-        outline:0px;
-    }
-    form div.input {
-        background-color: #f5f5f5;
-        border-radius: 30px;
-        width: 426px;
-        margin: 0 auto;
-    }
-    .form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        color: lightgrey;
-        }
-    .form input::-moz-placeholder { /* Firefox 19+ */
-        color: lightgrey;
-    }
-    .form input:-ms-input-placeholder { /* IE 10+ */
-        color: lightgrey;
-    }
-    .form input:-moz-placeholder { /* Firefox 18- */
-        color: lightgrey;
-        }
-    form button {
-        background-color: #e2574c;
-        height: 36px;
-        border-radius: 20px;
-        width: 110px;
-        color: #f5f5f5;
-        font-size: 16px;
-        margin: 5px;
-        cursor: pointer;
-    }
-    form button:hover{
-        background-color: rgb(202, 74, 67, 0.6);
-        transition: 0.4s;
-    }
-
-
-
-    /*---footer----*/
-    .footer{
-        background-color: #333333;
-        font-family: "PlayfairDisplay", Georgia, Times, 'Times New Roman', serif;
-        font-size: 16px;
-        line-height: 24px;
-        color: #f5f5f5;
-        padding: 3em 0;
-    }
-    .footer p{
-        margin-bottom: 1.4em;
-    }
-    .footer ul{
-        list-style-type: none;
-    }
-    .footer a{
-        text-decoration: none;
-        color: #f5f5f5;
-    }
-    /* .half-part{
-        width: 50%;
-    }
-    .third-part{
-        width: 33%;
-        display: inline-block;
-    }
-    .four-part{
-        width: 25%;
-        display: inline-block;
-    }
-    .fifth-part{
-        width: 20%;
-        display: inline-block;
-    } */
-    .hide-address::after{
-        content: "604-604-6040. info@alohaapparel.com";
-    }
-    .grey-medium{
-        color: #666666;
-    }
-    .social li{
-        font-family: "Raleway", Arial, Helvetica, sans-serif;
-        margin-bottom: 6px;
-    }
-    .social li a:hover, footer a:hover {
-        color: rgb(202, 74, 67, 0.9);
-        transition: 0.3s;
-    }
-    .social li a::before{
-        width: 40px;
-        display: inline-block;
-    }
-    .facebook a::before{
-        /*content: "\E87C";*/
-        content: "\f39e";
-        font-family: "Font Awesome 5 Brands"; 
-    }
-    .twitter a::before{
-        content: "\f099";
-        font-family: "Font Awesome 5 Brands"; 
-    }
-    .instagram a::before{
-        content: "\f16d";
-        font-family: "Font Awesome 5 Brands"; 
-    }
-    .pinterest a::before{
-        content: "\f231";
-        font-family: "Font Awesome 5 Brands"; 
-    }
-    .google a::before{
-        content: "\f0d5";
-        font-family: "Font Awesome 5 Brands"; 
-    }
-    footer .container{
-        display: flex;
-        justify-content: space-between;
+    .carrousel-nav p button{
+        font-size: 14px;
     }
     .hide-mobile{
         display: block;
     }
 
-    
 }

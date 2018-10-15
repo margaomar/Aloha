@@ -3,32 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title>Aloha Apparel Co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Online Clothes Shop">
     <meta name="author" content="RED Academy">
     <link type="text/css" rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="flickity-docs.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 </head>
 
-<body>
+<body id="header">
     <header>
         <nav class="main-nav container">
             <figure>
                 <a href="index.html"><img src="images/aloha-logo.svg" alt="Aloha logo" class="logo"></a>
             </figure>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="updates.html">Updates</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#updates">Updates</a></li>
             </ul>
             <div class="cart">
                 <a href="cart.html"><img src="images/cart-icon.svg" alt="Cart icon"></a>
             </div>
         </nav>
-
     </header>
-    <article class="header-collection">
+    <article class="header-collection" id="about">
         <h2>New Collection</h2>
         <h1>Spring/Summer 2018</h1>
     </article>
@@ -37,7 +41,7 @@
         <p>Aloha Apparel Co. sells only the finest ready-to-travel clothing. Browse our current selectin of products or sign-up for updates below.</p>
     </article>
     <article>
-        <nav class="categories-nav">
+        <nav class="categories-nav" id="shop">
             <section class="men">
                 <a href="men.html"><div class="name-cat-nav">Men's</div></a>
             </section>
@@ -58,41 +62,75 @@
             </section>
         </nav>
     </article>
-    <article class="claim">
+    <article class="claim carousel-claim" id="featured">
         <h2><span class="claim-italic">Most Loved</span> Products</h2>
     </article>
+
+    <!-- carrousel -->
+    <!-- Flickity HTML init -->
     <article>
-        <nav class="carrousel">
-            <ul>
-                <li><a href="#">
-                    <figure><img src="images/checked-stretch-dress.jpg" alt="Pink Dotted Dress">
-                    <figcaption><h2>Dresses</h2><h3>Checked Stretch Dress</h3><p>$129.00</p></figcaption></figure></a>
-                </li>
-                <li><a href="#">
-                    <figure><img src="images/blue-hipster-backpack.jpg" alt="Pink Dotted Dress">
-                    <figcaption><h2>Bags</h2><h3>Blue Hipster Backpack</h3><p>$69.00</p></figcaption></figure></a>
-                </li>
-                <li><a href="#">
-                    <figure><img src="images/demin-overall-shorts.jpg" alt="Pink Dotted Dress">
-                    <figcaption><h2>Demin</h2><h3>Demin Overall Shorts</h3><p>$89.00</p></figcaption></figure></a>
-                </li>
-                <li><a href="#">
-                    <figure><img src="images/pink-dotted-dress.jpg" alt="Pink Dotted Dress">
-                    <figcaption><h2>Dresses</h2><h3>Pink Dotted Dress</h3><p>$99.00</p></figcaption></figure></a>
-                </li>
-            </ul>
+        <nav class="carrousel-nav">
+            <div class="carousel" data-flickity>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/checked-stretch-dress.jpg" alt="Checked Stretch Dress">
+                    <figcaption><h2>Dresses</h2><h3>Checked Stretch Dress</h3><p>$49.00</p>
+                    <p><button>Add to cart</button></p></figcaption></figure> 
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/demin-overall-shorts.jpg" alt="Demin Overall Shorts">
+                    <figcaption><h2>Demin</h2><h3>Demin Overall Shorts</h3><p>$59.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/blue-hipster-backpack.jpg" alt="Blue Hipster Backpack">
+                    <figcaption><h2>Bags</h2><h3>Blue Hipster Backpack</h3><p>$129.00</p>               <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/pink-dotted-dress.jpg" alt="Pink Dotted Dress">
+                    <figcaption><h2>Dresses</h2><h3>Pink Dotted Dress</h3><p>$49.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/cotton-blue-shirt.jpg" alt="Cotton Blue Shirt">
+                    <figcaption><h2>T-Shirt</h2><h3>Cotton Blue Shirt </h3><p>$29.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/blue-silk-dress.jpg" alt="Blue Silk Dress">
+                    <figcaption><h2>Dresses</h2><h3>Blue Silk Dress</h3><p>$49.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/cotton-yellow-tshirt.jpg" alt="Cotton Yellow T-Shirt">
+                    <figcaption><h2>T-Shirt</h2><h3>Cotton Yellow T-Shirt</h3><p>$19.00</p>             <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+                <div class="carousel-cell">
+                    <figure><img class="carousel-cell-image"
+                    src="images/stretch-knit-dress.jpg" alt="Stretch Knit Dress">
+                    <figcaption><h2>Dresses</h2><h3>Stretch Knit Dress</h3><p>$49.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                </div>
+            </div>
         </nav>
     </article>
-    <article class="claim form white-color ">
+
+    <!-- Claim form -->
+    <article class="claim form white-color newsletter" id="updates">
         <h2 class="claim-form"><span class="claim-italic">Sign Up for</span> Updates</h2>
         <p class="claim-form">Stay updated on our latest product releases, be first to find out about upcoming sales, and get free style tips from our blog. Unsubscribe at any time.</p>
         <form>
-            <div class="input">
-                <input type="email" name="" placeholder="Your email" id="">
-                <button>Subscribe</button>
+            <div class="background">
+                <input class="" type="email" name="email" placeholder="Your email" id="your-email">
+                <input class="button" type="submit" value="Subscribe" name="Subscribe">
             </div>
+            <p class="hide alert">You're Welcome! Thanks for suscribing!</p>
+            <p class="hide alert">Please, enter your email address at first.</p>
         </form>
     </article>
+
+    <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="fifth-part">
@@ -118,6 +156,39 @@
         </div>
     </footer>
 
+    <a id="button"></a>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js”></script>    
+    <script src="js/flickity-docs.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/jquery-custom.js"></script>
+
+    <script>
+        jQuery(document).ready(function() {
+          
+
+        //    back to top
+          var btn = $('#button');
+        
+          $(window).scroll(function() {
+            if ($(window).scrollTop() > 300) {
+              btn.addClass('show');
+            } else {
+              btn.removeClass('show');
+            }
+          });
+        
+          btn.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop:0}, '300');
+          });
+        
+        });
+        
+        </script>
+        
 </body>
 
 </html>
