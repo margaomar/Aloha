@@ -11,9 +11,9 @@
         event.preventDefault();
         const $emailInput = $('#your-email');
         if ($emailInput.val().length!==0){
-            alert("Thanks for suscribing");
+            alert("You're Welcome! Thanks for suscribing!");
         } else {
-            alert("Please, enter a correct email address");
+            alert("Please, enter your email address at first.");
         }
     });
 

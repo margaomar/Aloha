@@ -703,6 +703,9 @@ footer .container{
 }
 
 @media screen and (min-width:1024px){
+    .main-nav ul {
+        width: 70%;
+    }
     .main-nav ul li a {
         font-size: 1.1rem;
     }
