@@ -8,7 +8,6 @@
     <meta name="author" content="RED Academy">
     <link type="text/css" rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="stylesheet.css">
-    <link type="text/css" rel="stylesheet" href="flickity-docs.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -29,6 +28,7 @@
             </ul>
             <div class="cart">
                 <a href="cart.html"><img src="images/cart-icon.svg" alt="Cart icon"></a>
+                <div class="cart-counter hide"> </div>
             </div>
         </nav>
     </header>
@@ -75,42 +75,49 @@
                     <figure><img class="carousel-cell-image"
                     src="images/checked-stretch-dress.jpg" alt="Checked Stretch Dress">
                     <figcaption><h2>Dresses</h2><h3>Checked Stretch Dress</h3><p>$49.00</p>
-                    <p><button>Add to cart</button></p></figcaption></figure> 
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure> 
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/demin-overall-shorts.jpg" alt="Demin Overall Shorts">
-                    <figcaption><h2>Demin</h2><h3>Demin Overall Shorts</h3><p>$59.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>Demin</h2><h3>Demin Overall Shorts</h3><p>$59.00</p>                
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/blue-hipster-backpack.jpg" alt="Blue Hipster Backpack">
-                    <figcaption><h2>Bags</h2><h3>Blue Hipster Backpack</h3><p>$129.00</p>               <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>Bags</h2><h3>Blue Hipster Backpack</h3><p>$129.00</p>               
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/pink-dotted-dress.jpg" alt="Pink Dotted Dress">
-                    <figcaption><h2>Dresses</h2><h3>Pink Dotted Dress</h3><p>$49.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>Dresses</h2><h3>Pink Dotted Dress</h3><p>$49.00</p>                
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/cotton-blue-shirt.jpg" alt="Cotton Blue Shirt">
-                    <figcaption><h2>T-Shirt</h2><h3>Cotton Blue Shirt </h3><p>$29.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>T-Shirt</h2><h3>Cotton Blue Shirt </h3><p>$29.00</p>                
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/blue-silk-dress.jpg" alt="Blue Silk Dress">
-                    <figcaption><h2>Dresses</h2><h3>Blue Silk Dress</h3><p>$49.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>Dresses</h2><h3>Blue Silk Dress</h3><p>$49.00</p>                
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/cotton-yellow-tshirt.jpg" alt="Cotton Yellow T-Shirt">
-                    <figcaption><h2>T-Shirt</h2><h3>Cotton Yellow T-Shirt</h3><p>$19.00</p>             <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>T-Shirt</h2><h3>Cotton Yellow T-Shirt</h3><p>$19.00</p>             
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
                 <div class="carousel-cell">
                     <figure><img class="carousel-cell-image"
                     src="images/stretch-knit-dress.jpg" alt="Stretch Knit Dress">
-                    <figcaption><h2>Dresses</h2><h3>Stretch Knit Dress</h3><p>$49.00</p>                <p><button>Add to cart</button></p></figcaption></figure></figcaption></figure>
+                    <figcaption><h2>Dresses</h2><h3>Stretch Knit Dress</h3><p>$49.00</p>                
+                    <p><button class="addToCart">Add to cart</button></p></figcaption></figure></figcaption></figure>
                 </div>
             </div>
         </nav>
@@ -165,52 +172,7 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="js/jquery-custom.js"></script>
 
-    <script>
-        jQuery(document).ready(function() {
-          
-
-        //    back to top
-          var btn = $('#button');
-        
-          $(window).scroll(function() {
-            if ($(window).scrollTop() > 300) {
-              btn.addClass('show');
-            } else {
-              btn.removeClass('show');
-            }
-          });
-        
-          btn.on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate({scrollTop:0}, '300');
-          });
-        
-        });
-        
-        </script>
         
 </body>
 
 </html>
-
-
-
-
-<!--<section>
-                <a href="men.html">Men</a>
-            </section>
-            <section>
-                <a href="trends.html">Trends</a>
-            </section>
-            <section>
-                <a href="glasses.html">Glasses</a>
-            </section>
-            <section>
-                <a href="sales.html">Sales</a>
-            </section>
-            <section>
-                <a href="bags.html">Bags</a>
-            </section>
-            <section>
-                <a href="womens.html">Women's</a>
-            </section>-->

@@ -1,12 +1,12 @@
-  
+//carousel
     $('.carousel').flickity({
-    // options
-    cellAlign: 'left',
-    contain: true,
-    wrapAround: true
+        // options
+        cellAlign: 'left',
+        contain: true,
+        wrapAround: true
     });
 
-    // newsletter message
+//newsletter message
     $(".newsletter").on('submit','form',function(event){
         event.preventDefault();
         const $emailInput = $('#your-email');
@@ -17,7 +17,7 @@
         }
     });
 
-    //smooth-scrolling
+//smooth-scrolling
     // Select all links with hashes
     $('a[href*="#"]')
     // Remove links that don't actually link to anything
@@ -55,37 +55,49 @@
     }
     });
 
-    // fixed nav
-    var wrap = $("#header");
-
-    wrap.on("scroll", function(e) {
-        
-    if (this.scrollTop > 147) {
-        wrap.addClass("fix-header");
-    } else {
-        wrap.removeClass("fix-header");
-    }
+//hide menu scroll down
+    'use strict';
     
+    var c, currentScrollTop = 0,
+        navbar = $('header');
+
+    $(window).scroll(function () {
+        var a = $(window).scrollTop();
+        var b = navbar.height();
+        
+        currentScrollTop = a;
+        
+        if (c < currentScrollTop && a > b + b) {
+            navbar.addClass("scrollUp");
+        } else if (c > currentScrollTop && !(a <= b)) {
+            navbar.removeClass("scrollUp");
+        }
+        c = currentScrollTop;
+    });
+    
+//add article to the cart - counting button
+    var clicks = 0; 
+    $(".addToCart").click(function(){ clicks++; 
+    $('.cart-counter').removeClass('hide');
+    $('.cart-counter').html(clicks);});
+
+//back to top
+    var btn = $('#button');
+    
+    $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
     });
 
-    //hide menu scroll down
-    
-        'use strict';
-        
-         var c, currentScrollTop = 0,
-             navbar = $('header');
-      
-         $(window).scroll(function () {
-            var a = $(window).scrollTop();
-            var b = navbar.height();
-           
-            currentScrollTop = a;
-           
-            if (c < currentScrollTop && a > b + b) {
-              navbar.addClass("scrollUp");
-            } else if (c > currentScrollTop && !(a <= b)) {
-              navbar.removeClass("scrollUp");
-            }
-            c = currentScrollTop;
-        });
+    btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+    });
+
+
+
+
 

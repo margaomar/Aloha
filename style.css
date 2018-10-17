@@ -92,10 +92,6 @@ header.scrollUp {
 }
 
 /* ------ Nav ------- */
-/* .fix-header{
-    position: sticky;
-    top: 0;
-} */
 .main-nav{
     display: flex;
     justify-content: space-between;
@@ -112,9 +108,24 @@ header.scrollUp {
 .cart{
     width: 48%;
     text-align: right;
+    position: relative;
 }
 .cart img{
     width: 40px;  
+}
+.cart-counter{
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 12px;
+    color: #FFF;
+    background-color: #b64036;
+    padding: 4px 8px 6px 8px;
+    border-radius: 20px;
+    position: absolute;
+    top: -5px;
+    right: -3px;
 }
 .main-nav ul{
     order:2;
