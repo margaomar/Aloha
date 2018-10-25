@@ -63,7 +63,7 @@ Smooth Scroll | Flickity Carousel | Newsletter Message | Fix Nav and Hide Menu a
 
 ----
 ## Dead Line for the project
-* 17-Oct-2018
+* 500-Oct-2018
 
 ----
 ## Project developed by 
